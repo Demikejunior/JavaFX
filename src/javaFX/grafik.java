@@ -1,5 +1,6 @@
 package javaFX;
 
+import javaFX2.Car;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -74,18 +75,21 @@ public class grafik extends Application{
 		root.getChildren().add(poly2);
 		
 		
-		for (int i = 0; i < 10000; i++) {
-			Star star = new Star(Math.random() * 70);
-			
-			Color rand = Color.color(Math.random(), Math.random(), Math.random()); 
-			
-			star.setFill(rand);
-			star.setTranslateX(Math.random() * 700);
-			star.setTranslateY(Math.random() * 500);
-			star.setTranslateZ(Math.random());
-			root.getChildren().add(star);
-		}
+//		for (int i = 0; i < 10000; i++) {
+//			Star star = new Star(Math.random() * 70);
+//			
+//			Color rand = Color.color(Math.random(), Math.random(), Math.random()); 
+//			
+//			star.setFill(rand);
+//			star.setTranslateX(Math.random() * 700);
+//			star.setTranslateY(Math.random() * 500);
+//			star.setTranslateZ(Math.random());
+//			root.getChildren().add(star);
+//		}
 		
+		Car car = new Car(Color.DEEPSKYBLUE);
+		
+		root.getChildren().add(car);
 	}
 	
 	public static void main(String[] args) {

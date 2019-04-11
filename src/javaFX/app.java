@@ -41,34 +41,24 @@ public class app extends Application {
 			KeyCode key = event.getCode();
 
 			switch (key) {
-			case W:
-				double temp = player.getTranslateY();
-				player.setTranslateY(temp - 2);
-			default:
-				break;
-			}
-			switch (key) {
-			case S:
-				double temp = player.getTranslateY();
-				player.setTranslateY(temp + 2);
-			default:
-				break;
-			}
-			switch (key) {
-			case A:
-				double temp = player.getTranslateX();
-				player.setTranslateX(temp - 2);
-			default:
-				break;
-			}
-			switch (key) {
-			case D:
-				double temp = player.getTranslateX();
-				player.setTranslateX(temp + 2);
-			default:
-				break;
-			}
-
+				
+				case W:
+					player.setTranslateY(player.getTranslateY() - 2);
+					break;
+				case S:
+					player.setTranslateY(player.getTranslateY() + 2);
+					break;
+				case A:
+					player.setTranslateX(player.getTranslateX() - 2);
+					break;
+				case D:
+					player.setTranslateX(player.getTranslateX() + 2);
+					break;
+					
+				default:
+					break;
+				}
+		
 		});
 
 		primaryStage.setScene(scene);
