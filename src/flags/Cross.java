@@ -15,30 +15,27 @@ public class Cross extends Group {
 	 * @param m 
 	 * <br>L - vertical stripe goes through the left side (Scandinavian cross)
 	 * <br>M - vertical stripe goes through the middle (English flag)
-	 * <br>R - vertical stripe goes through right side (No)
+	 * <br>R - vertical stripe goes through right side (A flipped Scandinavian cross)
 	 * <br><br>
 	 * @param width
 	 * <br>The flags width
 	 * <br><br>
 	 * @param proport
-	 * <br>The flags proportions as told on Wikipedia {Height, Width}
+	 * <br>The flags proportions as told on Wikipedia Height / Width
 	 * <br><br>
-	 * @param S1P
-	 * <br>The proportion of the Red stripe in the Genoan flag to width ex. Swedish flag is 4:2:5 so S1P for Sweden is 2/11
+	 * @param SP
+	 * <br>The proportion of the main stripe to width ex. Swedish flag is 4:2:5 so S1P for Sweden is 2/11
 	 * <br><br>
-	 * @param S2P
-	 * <br>The proportion of the white stripe in the Norwegian flag to width ex. Norwegian flag is 6:1:2:1:12 so S2P for Norway is 4/22 = 2/11
+	 * @param SxP
+	 * <br>The proportion of the sub stripes to the main stripe ex. Norwegian flag is 6:1:2:1:12 so S2P for Norway is 4/2 = 2
+	 * <br>Doesn't allow for multiple sub stripes
 	 * <br><br>
-	 * @param c1
-	 * <br>First color, blue in Swedish flag
+	 * @param c
+	 * <br>An array of the colors used in the flag, c[0] will be the background color, c[1] will be the primary stripes color, 
+	 * <br>subsequent indexes will be the color of the following stripe
 	 * <br><br>
-	 * @param c2
-	 * <br>Second color, blue in Finnish flag
-	 * <br><br>
-	 * @param c3
-	 * <br>Third color, white in the UK & Norwegian flag
 	 */
-	public Cross (char v, char m, double width, int[] proport, double S1P, double S2P, Color c1, Color c2, Color c3) {
+	public Cross (char v, char m, double width, double proport, double SP, double SxP, Color[] c) {
 		
 		
 		

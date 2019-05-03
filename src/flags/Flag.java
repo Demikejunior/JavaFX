@@ -13,14 +13,15 @@ public class Flag extends Application {
 	public void start(Stage primaryStage) throws Exception {
 
 		Group root = new Group();
-		Scene scene = new Scene(root, 500, 600, Color.GRAY);
+		Scene scene = new Scene(root, 400, 400, Color.GRAY);
 		primaryStage.setScene(scene);
 		primaryStage.show();
 
 		double proport = 0;
 		Color C[] = new Color[13];
-		int width = 300;
+		int width = 400;
 
+		Group[] flags = new Group[50];
 		
 		// Belgium
 
@@ -31,7 +32,7 @@ public class Flag extends Application {
 //
 //		Multcolor belgium = new Multcolor(3, 'v', width, proport, C);
 //
-//		root.getChildren().add(belgium);
+//		flags[0].add(belgium);
 //
 //		
 //		// Russia
@@ -42,9 +43,9 @@ public class Flag extends Application {
 //		C[2] = Color.RED;
 //
 //		Multcolor russia = new Multcolor(3, 'h', width, proport, C);
-//		russia.setTranslateY(width);
+//		
 //
-//		root.getChildren().add(russia);
+//		flags[1].add(russia);
 //
 //		
 //		// Netherlands
@@ -55,9 +56,8 @@ public class Flag extends Application {
 //		C[2] = Color.DARKSLATEBLUE;
 //
 //		Multcolor nethers = new Multcolor(3, 'h', width, proport, C);
-//		nethers.setTranslateY(width * 2);
 //
-//		root.getChildren().add(nethers);
+//		flags[2].add(nethers);
 //
 //		
 //		// Togo
@@ -86,14 +86,14 @@ public class Flag extends Application {
 //		
 //		togo.getChildren().add(sqr);
 //		togo.getChildren().add(star);
-//		togo.setTranslateX(width * 1.1);
 //		
-//		root.getChildren().add(togo);
+//		flags[3].add(togo);
 		
 		
 		// USA
 		
 		proport = 10 /19.0;
+		
 		for (int i = 0; i < 13; i++) {
 			if (i % 2 == 0) {
 				C[i] = Color.RED;
@@ -107,40 +107,41 @@ public class Flag extends Application {
 		
 		Rectangle fly = new Rectangle();
 		fly.setWidth(width * 2 / 5);
-		fly.setHeight(width * proport * 6 / 13);
+		fly.setHeight(width * proport * 7 / 13);
 		fly.setFill(Color.BLUE);
 		
 		USA.getChildren().add(fly);
 		
 		Star[] stars = new Star[50];
-		for (int i = 0; i < 50; i++) {
+		for (int i = 0; i < stars.length; i++) {
 			
 			stars[i] = new Star(width * proport * 2 / 5 / 13);
 			stars[i].setFill(Color.WHITE);
 			
-			int x = 0;
-			int b = i;
 			
-			while (b > 11) {
-				x++;
-				b =- 11;
-			}
+			int x = (int) i / 11;
+			int b = i % 11;
+			double g = width * 2 / 5.0 / 12.0;
+			double e = width * proport * 7 / 13.0 / 10.0;
 			
-			stars[i].setTranslateX(b * width * 1 / 5 / 6 + width * 1 / 5 / 12);
-			stars[i].setTranslateY(x * width * 6 / 13 / 5 * proport + width * 6 / 13 / 10 * proport);
+			stars[i].setTranslateX(g);
+			stars[i].setTranslateY(e);
 			
-			if (i % 2 == 1) {
-				for (int j = 0; j < 5; j++) {
-					stars[i].setTranslateX(stars[i].getTranslateX() + width * 1 / 5 / 12);
-					stars[i].setTranslateY(stars[i].getTranslateY() + width * 3 / 13 / 10 * proport);
-				}
+			if (b < 6) {
+				
+				stars[i].setTranslateX(b * g * 2 + g);
+				stars[i].setTranslateY(x * e * 2 + e);
+				
+			} else {
+				
+				stars[i].setTranslateX((b - 6) * g * 2 + g * 2);
+				stars[i].setTranslateY(x * e * 2 + e * 2);
+				
 			}
 			
 		}
 		
 		USA.getChildren().addAll(stars);
-//		USA.setTranslateX(width * 1.1);
-//		USA.setTranslateY(width);
 		
 		root.getChildren().add(USA);
 		
