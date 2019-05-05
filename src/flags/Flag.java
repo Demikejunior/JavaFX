@@ -288,8 +288,8 @@ public class Flag extends Application {
 
 		Multcolor congo = new Multcolor(1, 'h', width, proport, C);
 
-		Polygon p1 = new Polygon(0, 0, 0, width * proport, width * 3 / 4, 0);
-		Polygon p2 = new Polygon(width, 0, width, width * proport, width / 4, width * proport);
+		Polygon p1 = new Polygon(0, 0, 0, width * proport, width * proport, 0);
+		Polygon p2 = new Polygon(width, 0, width, width * proport, width - (width * proport), width * proport);
 		p1.setFill(C[1]);
 		p2.setFill(C[2]);
 
