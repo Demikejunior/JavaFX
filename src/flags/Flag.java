@@ -16,7 +16,7 @@ public class Flag extends Application {
 	ArrayList<KeyCode> keysPressed = new ArrayList<KeyCode>();
 	int fIndex = 0;
 	double width = 600;
-	
+
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 
@@ -24,7 +24,7 @@ public class Flag extends Application {
 		Scene scene = new Scene(root, 600, 400, Color.DIMGRAY);
 		primaryStage.setScene(scene);
 		primaryStage.show();
-		
+
 		Text info = new Text();
 		info.setFill(Color.WHITE);
 		info.setTranslateX(scene.getWidth() / 3);
@@ -67,8 +67,9 @@ public class Flag extends Application {
 						width = 25;
 					}
 
-					Group[] flags = { Belgium(width), Russia(width), Netherland(width), Togo(width), USA(width),
-							Kuwait(width), Laos(width), Kongo(width), Greenland(width), Sweden(width), Norway(width) };
+					Group[] flags = { Belgium(width), Russia(width), Netherland(width), Luxembourg(width), Togo(width),
+							USA(width), Kuwait(width), Laos(width), Kongo(width), Greenland(width), Sweden(width),
+							Norway(width), Estonia(width), France(width), Latvia(width), Myanmar(width) };
 
 					fIndex = fIndex % flags.length;
 					if (fIndex < 0) {
@@ -153,6 +154,19 @@ public class Flag extends Application {
 
 		Multcolor nethers = new Multcolor(3, 'h', width, proport, C);
 		return nethers;
+
+	}
+
+	public static Group Luxembourg(double width) {
+
+		Color[] C = new Color[3];
+		double proport = 1 / 1.0;
+		C[0] = Color.RED;
+		C[1] = Color.WHITE;
+		C[2] = Color.LIGHTBLUE;
+
+		Multcolor lux = new Multcolor(3, 'h', width, proport, C);
+		return lux;
 
 	}
 
@@ -306,45 +320,45 @@ public class Flag extends Application {
 		return congo;
 
 	}
-	
+
 	public static Group Greenland(double width) {
-		
+
 		Color[] C = new Color[2];
 		double proport = 2 / 3.0;
 		C[0] = Color.WHITE;
 		C[1] = Color.RED;
-		
+
 		Multcolor green = new Multcolor(2, 'h', width, proport, C);
-		
+
 		Arc red = new Arc(width * 7 / 18, width * proport / 2, width * 4 / 18, width * 4 / 18, 0, 180);
 		Arc white = new Arc(width * 7 / 18, width * proport / 2, width * 4 / 18, width * 4 / 18, 180, 180);
-		
+
 		red.setFill(C[1]);
 		white.setFill(C[0]);
-		
+
 		green.getChildren().addAll(red, white);
-		
+
 		return green;
-		
+
 	}
-	
+
 	public static Group Sweden(double width) {
-		
+
 		Color[] C = new Color[2];
 		double proport = 5 / 8.0;
 		double SP = 2 / 16.0;
 		double St = 5 / 16.0;
 		C[0] = Color.BLUE;
 		C[1] = Color.YELLOW;
-		
+
 		Cross swede = new Cross(width, proport, 1, SP, 0, St, 0, C);
-		
+
 		return swede;
-		
+
 	}
-	
+
 	public static Group Norway(double width) {
-		
+
 		Color[] C = new Color[3];
 		double proport = 16 / 22.0;
 		double SP = 2 / 24.0;
@@ -354,10 +368,72 @@ public class Flag extends Application {
 		C[0] = Color.RED;
 		C[1] = Color.DARKBLUE;
 		C[2] = Color.WHITE;
-		
+
 		Cross norway = new Cross(width, proport, 2, SP, SxP, ST, SxT, C);
-		
+
 		return norway;
+
+	}
+
+	public static Group Estonia(double width) {
+
+		Color[] C = new Color[3];
+		double proport = 7 / 11.0;
+		C[0] = Color.web("#0072CE");
+		C[1] = Color.BLACK;
+		C[2] = Color.WHITE;
+
+		Multcolor estonia = new Multcolor(3, 'h', width, proport, C);
+		return estonia;
+
+	}
+
+	public static Group France(double width) {
+
+		Color[] C = new Color[3];
+		double proport = 2 / 3.0;
+		C[0] = Color.BLUE;
+		C[1] = Color.WHITE;
+		C[2] = Color.RED;
+
+		Multcolor france = new Multcolor(3, 'v', width, proport, C);
+		return france;
+
+	}
+
+	public static Group Latvia(double width) {
+	
+		Color[] C = new Color[5];
+		double proport = 1 / 2.0;
+		C[0] = Color.web("#9E1B34");
+		C[1] = Color.web("#9E1B34");
+		C[2] = Color.WHITE;
+		C[3] = Color.web("#9E1B34");
+		C[4] = Color.web("#9E1B34");
+
+		Multcolor latvia = new Multcolor(5, 'h', width, proport, C);
+		return latvia;
+	
+	}
+	
+	public static Group Myanmar(double width) {
+		
+		Color[] C = new Color[3];
+		double proport = 2 / 3.0;
+		C[0] = Color.web("#FECB00");
+		C[1] = Color.web("#34B233");
+		C[2] = Color.web("#EA2839");
+
+		Multcolor myanmar = new Multcolor(3, 'h', width, proport, C);
+		
+		Star star = new Star(width * 4 / 15);
+		star.setFill(Color.WHITE);
+		star.setTranslateX(width / 2.0);
+		star.setTranslateY(width * proport * 7 / 13.0);
+		
+		myanmar.getChildren().add(star);
+		
+		return myanmar;
 		
 	}
 
