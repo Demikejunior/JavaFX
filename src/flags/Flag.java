@@ -60,7 +60,7 @@ public class Flag extends Application {
 					}
 
 					Group[] flags = { Belgium(width), Russia(width), Netherland(width), Togo(width), USA(width),
-							Kuwait(width), Laos(width), Kongo(width) };
+							Kuwait(width), Laos(width), Kongo(width), Greenland(width), Sweden(width), Norway(width) };
 
 					fIndex = fIndex % flags.length;
 					if (fIndex < 0) {
@@ -71,7 +71,7 @@ public class Flag extends Application {
 					root.getChildren().add(flags[fIndex]);
 
 					try {
-						Thread.sleep(150);
+						Thread.sleep(200);
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -297,6 +297,60 @@ public class Flag extends Application {
 
 		return congo;
 
+	}
+	
+	public static Group Greenland(double width) {
+		
+		Color[] C = new Color[2];
+		double proport = 2 / 3.0;
+		C[0] = Color.WHITE;
+		C[1] = Color.RED;
+		
+		Multcolor green = new Multcolor(2, 'h', width, proport, C);
+		
+		Arc red = new Arc(width * 7 / 18, width * proport / 2, width * 4 / 18, width * 4 / 18, 0, 180);
+		Arc white = new Arc(width * 7 / 18, width * proport / 2, width * 4 / 18, width * 4 / 18, 180, 180);
+		
+		red.setFill(C[1]);
+		white.setFill(C[0]);
+		
+		green.getChildren().addAll(red, white);
+		
+		return green;
+		
+	}
+	
+	public static Group Sweden(double width) {
+		
+		Color[] C = new Color[2];
+		double proport = 5 / 8.0;
+		double SP = 2 / 16.0;
+		double St = 5 / 16.0;
+		C[0] = Color.BLUE;
+		C[1] = Color.YELLOW;
+		
+		Cross swede = new Cross(width, proport, 1, SP, 0, St, 0, C);
+		
+		return swede;
+		
+	}
+	
+	public static Group Norway(double width) {
+		
+		Color[] C = new Color[3];
+		double proport = 16 / 22.0;
+		double SP = 2 / 24.0;
+		double ST = 7 / 24.0;
+		double SxT = 1 / 24.0;
+		double SxP = 2;
+		C[0] = Color.RED;
+		C[1] = Color.DARKBLUE;
+		C[2] = Color.WHITE;
+		
+		Cross norway = new Cross(width, proport, 2, SP, SxP, ST, SxT, C);
+		
+		return norway;
+		
 	}
 
 }
