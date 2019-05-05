@@ -8,21 +8,29 @@ import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class Flag extends Application {
 
 	ArrayList<KeyCode> keysPressed = new ArrayList<KeyCode>();
 	int fIndex = 0;
-	double width = 400;
-
+	double width = 600;
+	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 
 		Group root = new Group();
-		Scene scene = new Scene(root, 600, 400, Color.GRAY);
+		Scene scene = new Scene(root, 600, 400, Color.DIMGRAY);
 		primaryStage.setScene(scene);
 		primaryStage.show();
+		
+		Text info = new Text();
+		info.setFill(Color.WHITE);
+		info.setTranslateX(scene.getWidth() / 3);
+		info.setTranslateY(scene.getHeight() / 3);
+		info.setText("Left / Right or A / D change flags" + "\r\r" + "Up / Down or W / S change size");
+		root.getChildren().add(info);
 
 		AnimationTimer at = new AnimationTimer() {
 
