@@ -9,10 +9,10 @@ public class Cross extends Group {
 	/**
 	 * 
 	 * @param width
-	 * <br>The flags width
+	 * <br>The flag's width
 	 * <br><br>
 	 * @param proport
-	 * <br>The flags proportions as told on Wikipedia Height / Width
+	 * <br>The flag's proportions as told on Wikipedia Height / Width
 	 * <br><br>
 	 * @param x
 	 * <br>Amount of extra stripes, on the Swedish flag it's 1, Norwegian flag 2
