@@ -160,7 +160,7 @@ public class Flag extends Application {
 	public static Group Luxembourg(double width) {
 
 		Color[] C = new Color[3];
-		double proport = 1 / 1.0;
+		double proport = 1 / 2.0;
 		C[0] = Color.RED;
 		C[1] = Color.WHITE;
 		C[2] = Color.LIGHTBLUE;
